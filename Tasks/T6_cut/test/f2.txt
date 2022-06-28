@@ -1,0 +1,6 @@
+If you want to help contribute to Ubuntu, then you’ve come to the right place.
+Keep reading to learn how.
+You have just taken your first step toward getting involved.
+Before you get started, we ask that you please observe the Ubuntu Code of Conduct.
+It’s not very long and it will help you get started.
+Once that’s done, check out our community page.

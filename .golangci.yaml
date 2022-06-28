@@ -1,0 +1,83 @@
+run:
+    skip-dirs:
+        - cmd/auxiliary
+issues:
+    exclude:
+        - NewSyncProducer returns
+        - TLSConfig, ReadTimeout
+        - 'unexported-return: exported func New returns unexported type'
+#        - defer repo.Pool.Close()
+
+linters:
+    enable-all: true
+    disable:
+#        - contextcheck
+#        - cyclop
+#        - decorder
+#        - depguard
+#        - dogsled
+#        - dupl
+#        - durationcheck
+#        - errchkjson
+#        - errname
+#        - errorlint
+#        - execinquery
+#        - exhaustive
+        - exhaustivestruct
+#        - exhaustruct
+#        - exportloopref
+#        - forbidigo
+#        - forcetypeassert
+#        - funlen
+        - gci
+        - gochecknoglobals
+        - gochecknoinits
+#        - gocognit
+#        - gocritic
+#        - gocyclo
+#        - godot
+        - godox
+#        - goerr113
+#        - gofmt
+        - gofumpt
+#        - goheader
+        - goimports
+        - golint
+#        - gomoddirectives
+#        - gomodguard
+#        - goprintffuncname
+#        - gosec
+#        - grouper
+        - ireturn
+#        - ifshort
+#        - importas
+        - interfacer
+#        - lll
+#        - maintidx
+#        - makezero
+        - maligned
+#        - nestif
+#        - nilerr
+#        - nilnil
+        - nlreturn
+#        - noctx
+#        - nolintlint
+#        - nonamedreturns
+#        - promlinter
+#        - revive
+#        - rowserrcheck
+        - scopelint
+#        - sqlclosecheck
+#        - stylecheck
+        - tagliatelle
+#        - tenv
+#        - testpackage
+#        - thelper
+#        - tparallel
+#        - unconvert
+#        - unparam
+        - varnamelen
+#        - wastedassign
+#        - whitespace
+        - wrapcheck
+        - wsl
