@@ -1,11 +1,11 @@
-package ports
+package input
 
 import (
 	"WBL2/Tasks/T11/internal/domain/entity"
 	"context"
 )
 
-type EventsStorage interface {
+type EventsService interface {
 	Create(ctx context.Context, event entity.Event) error
 	Update(ctx context.Context, event entity.Event) error
 	Delete(ctx context.Context, event entity.Event) error

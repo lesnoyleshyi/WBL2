@@ -1,11 +1,9 @@
 package http
 
-type responseSuccess struct {
-	Result string	`json:"result"`
+type successResp struct {
+	Result string `json:"result"`
 }
 
-type responseErr struct {
+type errResp struct {
 	Err string `json:"error"`
 }
-
-func (s Server)

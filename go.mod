@@ -5,8 +5,11 @@ go 1.18
 require (
 	github.com/beevik/ntp v0.3.0
 	github.com/gocolly/colly v1.2.0
+	github.com/mailru/easyjson v0.7.7
 	github.com/mitchellh/go-ps v1.0.0
 	github.com/spf13/cobra v1.5.0
+	go.uber.org/zap v1.21.0
+	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	gopkg.in/Shopify/sarama.v1 v1.20.1
 )
 
@@ -30,7 +33,6 @@ require (
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/kennygrant/sanitize v1.2.4 // indirect
-	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
 	github.com/saintfish/chardet v0.0.0-20120816061221-3af4cd4741ca // indirect
@@ -39,7 +41,6 @@ require (
 	github.com/temoto/robotstxt v1.1.2 // indirect
 	go.uber.org/atomic v1.9.0 // indirect
 	go.uber.org/multierr v1.8.0 // indirect
-	go.uber.org/zap v1.21.0 // indirect
 	golang.org/x/net v0.0.0-20220624214902-1bab6f366d9e // indirect
 	golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a // indirect
 	golang.org/x/text v0.3.7 // indirect
