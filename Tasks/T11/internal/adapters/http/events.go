@@ -106,6 +106,7 @@ func (a AdapterHTTP) getEventsByPeriod(w http.ResponseWriter, r *http.Request) {
 	from, to, err := utils.GetPeriod(r)
 	if err != nil {
 		a.respondError(w, "can't recognise query parameters", http.StatusBadRequest, err)
+		return
 	}
 
 	events, err = a.events.Get(ctx, from, to)
