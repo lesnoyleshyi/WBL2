@@ -16,6 +16,8 @@ func (a AdapterHTTP) eventsHandler() http.Handler {
 	r.HandleFunc("/delete_event", a.deleteEvent)
 
 	r.HandleFunc("/events_for_day", a.getEventsByPeriod)
+	r.HandleFunc("/events_for_week", a.getEventsByPeriod)
+	r.HandleFunc("/events_for_month", a.getEventsByPeriod)
 
 	return r
 }
