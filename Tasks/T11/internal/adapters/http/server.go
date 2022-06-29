@@ -48,11 +48,3 @@ func (a AdapterHTTP) Start(ctx context.Context) error {
 func (a AdapterHTTP) Stop(ctx context.Context) error {
 	return a.server.Shutdown(ctx)
 }
-
-func (a AdapterHTTP) respondSuccess(w http.ResponseWriter, status int) {
-
-}
-
-func (a AdapterHTTP) respondError() {
-
-}

@@ -6,9 +6,9 @@ import (
 )
 
 type Event struct {
-	Datetime    time.Time
-	Title       string
-	Description string
+	Datetime    time.Time `json:"datetime"`
+	Title       string    `json:"title"`
+	Description string    `json:"description"`
 }
 
 func (e Event) String() string {

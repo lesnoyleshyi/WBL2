@@ -36,13 +36,13 @@ func easyjson692db02bDecodeWBL2TasksT11InternalDomainEntity(in *jlexer.Lexer, ou
 			continue
 		}
 		switch key {
-		case "Datetime":
+		case "datetime":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.Datetime).UnmarshalJSON(data))
 			}
-		case "Title":
+		case "title":
 			out.Title = string(in.String())
-		case "Description":
+		case "description":
 			out.Description = string(in.String())
 		default:
 			in.SkipRecursive()
@@ -59,17 +59,17 @@ func easyjson692db02bEncodeWBL2TasksT11InternalDomainEntity(out *jwriter.Writer,
 	first := true
 	_ = first
 	{
-		const prefix string = ",\"Datetime\":"
+		const prefix string = ",\"datetime\":"
 		out.RawString(prefix[1:])
 		out.Raw((in.Datetime).MarshalJSON())
 	}
 	{
-		const prefix string = ",\"Title\":"
+		const prefix string = ",\"title\":"
 		out.RawString(prefix)
 		out.String(string(in.Title))
 	}
 	{
-		const prefix string = ",\"Description\":"
+		const prefix string = ",\"description\":"
 		out.RawString(prefix)
 		out.String(string(in.Description))
 	}
