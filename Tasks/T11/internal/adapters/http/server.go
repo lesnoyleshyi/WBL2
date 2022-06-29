@@ -6,6 +6,7 @@ import (
 	"errors"
 	"go.uber.org/zap"
 	"net/http"
+	"time"
 )
 
 type AdapterHTTP struct {
@@ -22,7 +23,7 @@ func New(events input.EventsService, logger *zap.SugaredLogger) AdapterHTTP {
 	a.events = events
 	a.logger = logger
 	a.server = &http.Server{
-		Handler: a.routes(),
+		Handler: a.loggerWrapper(a.routes()),
 	}
 
 	return a
@@ -47,4 +48,22 @@ func (a AdapterHTTP) Start(ctx context.Context) error {
 
 func (a AdapterHTTP) Stop(ctx context.Context) error {
 	return a.server.Shutdown(ctx)
+}
+
+func (a AdapterHTTP) loggerWrapper(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		start := time.Now()
+		url := r.RequestURI
+		ip := r.RemoteAddr
+
+		next.ServeHTTP(w, r)
+
+		finish := time.Now()
+		serveTime := finish.Sub(start)
+		a.logger.Infow("request served",
+			zap.String("url", url),
+			zap.String("from", ip),
+			zap.Duration("resp time", serveTime),
+		)
+	})
 }
